@@ -16,13 +16,12 @@ class CategoryAndAuthor(PageBase):
         actions = ActionChains(self.driver)
         actions.move_to_element(species).perform()
         time.sleep(6)
-        #self.driver.execute_script("window.scrollBy(0,400)", "")
         child=self.WaitForElementVisible(CHILD)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", child)
         self.driver.get("https://el-kitap.org/e-kitaplar/deneme/")
         self.driver.execute_script("window.scrollBy(0,500)", "")
 
-    #Belirli bir yazar seçilerek kitaplarının listelenmesi durumu.
+    #Belirli bir yazar seçilerek kitaplarının listelenmesi durumu.(CASE2)
     def author(self):
         self.driver.get("https://el-kitap.org/")
         search_icon=self.WaitForElementVisible(SEARCHING).click()
@@ -45,7 +44,8 @@ class CategoryAndAuthor(PageBase):
         alert_message=self.WaitForElementVisible(ALERT_MESSAGE)
         assert {alert_message.text == ALERT_TEXT}
         self.driver.execute_script("window.scrollBy(0,400)", "")
-
+    
+    #Olmayan yazar seçilmesi durumu(CASE4)
     def invalid_author(self):
         self.driver.get("https://el-kitap.org/")
         search_icon=self.WaitForElementVisible(SEARCHING).click()
