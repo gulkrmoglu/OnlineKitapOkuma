@@ -1,6 +1,5 @@
 from OnlineKitapOkumaSitesi.pages.constants.globalConstants import *
 from OnlineKitapOkumaSitesi.pages.PageBase import PageBase
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 import time
 
@@ -20,6 +19,7 @@ class BooksSearchingAndFiltering(PageBase):
         time.sleep(5)       
         self.driver.execute_script("window.scrollBy(0,400)", "")
 
+       
      #Birden fazla fitreleme kullanılması durumu(CASE2)
     def multiple_filtering(self):
         self.driver.get("https://el-kitap.org/")
