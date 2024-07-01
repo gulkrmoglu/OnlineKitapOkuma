@@ -16,9 +16,8 @@ class CategoryAndAuthor(PageBase):
         actions = ActionChains(self.driver)
         actions.move_to_element(species).perform()
         time.sleep(6)
-        child=self.WaitForElementVisible(CHILD)
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", child)
-        self.driver.get("https://el-kitap.org/e-kitaplar/deneme/")
+        attempt=self.WaitForElementVisible(ATTEMPT_CSS).click()
+        time.sleep(20)       
         self.driver.execute_script("window.scrollBy(0,500)", "")
 
     #Belirli bir yazar seçilerek kitaplarının listelenmesi durumu.(CASE2)
