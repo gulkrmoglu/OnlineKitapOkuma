@@ -9,7 +9,7 @@ class StartReadingAndProgress(PageBase):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
-    
+    #Okumaya başlanması ve okuma ilerlemesinin durumu (case1)
     def start_reading_and_progress(self):
         species=self.WaitForElementVisible(SPECIES)
         actions = ActionChains(self.driver)
@@ -23,11 +23,13 @@ class StartReadingAndProgress(PageBase):
         self.driver.execute_script("window.scrollBy(0,600)", "")
         time.sleep(30)
         read = self.WaitForElementVisible(READ).click()
-        time.sleep(10)
-        
+        time.sleep(10)   
         for _ in range(5):  
             actions.send_keys(Keys.RIGHT).perform()
             time.sleep(2)  
         time.sleep(20)
+        
+
+        
        
         

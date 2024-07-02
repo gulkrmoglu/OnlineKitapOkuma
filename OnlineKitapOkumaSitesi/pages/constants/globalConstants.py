@@ -23,7 +23,12 @@ SEARCH_STORY="öykü"
 PHILOSOPHY=(By.CSS_SELECTOR,"#top-menu > #menu-item-2176 #menu-item-2192 > a")
 THOMAS=(By.CSS_SELECTOR,".post-card:nth-child(1) > .post-card__body a")
 READ=(By.CSS_SELECTOR,".entry-content > p > .btn:nth-child(1)")
-PAGEONE=(By.CSS_SELECTOR,"#pagesContainer_documentViewer_arrowright")
+PAGEONE=(By.XPATH,"//div[@id='pagesContainer_documentViewer_arrowright']")
+#(By.CSS_SELECTOR,"#pagesContainer_documentViewer_arrowright")
 #(By.ID,"pagesContainer_documentViewer_arrowright")
+DOWNLOAD=(By.CSS_SELECTOR,"https://el-kitap.org/thomas-more-utopia/#n1")
+DOWNLOAD_XPATH=(By.XPATH,"//*[@id='toolbar_documentViewer']/img[2]")
+
+
 
 
