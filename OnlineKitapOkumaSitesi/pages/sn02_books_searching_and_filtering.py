@@ -61,9 +61,3 @@ class BooksSearchingAndFiltering(PageBase):
         alert_message=self.WaitForElementVisible(ALERT_MESSAGE)
         assert {alert_message.text == ALERT_TEXT}
         self.driver.execute_script("window.scrollBy(0,400)", "")
-
-        
-
-
-
-
